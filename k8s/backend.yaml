@@ -15,18 +15,27 @@ spec:
       containers:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_5ee3ef553931
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_15a80204fa97
           env:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
               value: jdbc:mariadb://mariadb:3306/krampoline
+            - name: sid
+              valueFrom:
+                configMapKeyRef:
+                  name: config 
+                  key: sid
+            - name: token
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: token
           resources:
             requests:
               memory: 1Gi
-          readinessProbe:
-            httpGet:
-              path: /api/test
+          livenessProbe:
+            tcpSocket:
               port: 8080
 ---
 apiVersion: v1
