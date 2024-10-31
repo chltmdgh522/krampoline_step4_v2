@@ -23,7 +23,7 @@ spec:
                 configMapKeyRef:
                   name: config 
                   key: VITE_TMAP_APP_KEY
-            - name: VITE_OPENAI_API_KEY
+            - name: OPENAI_API_KEY
               valueFrom:
                 configMapKeyRef:
                   name: config
