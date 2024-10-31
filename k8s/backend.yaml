@@ -36,7 +36,7 @@ spec:
               memory: 1Gi
           readinessProbe:
             httpGet:
-              path: /api/test
+              path: /actuator/health/readiness
               port: 8080
 ---
 apiVersion: v1
