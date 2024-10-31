@@ -34,9 +34,8 @@ spec:
           resources:
             requests:
               memory: 1Gi
-          readinessProbe:
-            httpGet:
-              path: /actuator/health/readiness
+          livenessProbe:
+            tcpSocket:
               port: 8080
 ---
 apiVersion: v1
