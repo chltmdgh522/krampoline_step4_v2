@@ -15,7 +15,7 @@ spec:
       containers:
         - name: frontend
           # 여러분의 frontend image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_fb724d017c05
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_7c3e5d928f35
           env:
             - name: VITE_TMAP_APP_KEY
               valueFrom:
