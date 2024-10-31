@@ -21,6 +21,16 @@ spec:
               value: Asia/Seoul
             - name: DATABASE_URL
               value: jdbc:mariadb://mariadb:3306/krampoline
+            - name: sid
+              valueFrom:
+                configMapKeyRef:
+                  name: config 
+                  key: sid
+            - name: token
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: token
           resources:
             requests:
               memory: 1Gi
@@ -28,17 +38,6 @@ spec:
             httpGet:
               path: /api/test
               port: 8080
-              
-            - name: sid
-              valueFrom:
-                configMapRef:
-                  name: config 
-                  key: sid
-            - name: token
-              valueFrom:
-                configMapRef:
-                  name: config
-                  key: token
 ---
 apiVersion: v1
 kind: Service

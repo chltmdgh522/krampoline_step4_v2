@@ -19,17 +19,17 @@ spec:
           env:
             - name: VITE_TMAP_APP_KEY
                valueFrom:
-                configMapRef:
+                configMapKeyRef:
                   name: config 
                   key: VITE_TMAP_APP_KEY
             - name: VITE_OPENAI_API_KEY
                valueFrom:
-                configMapRef:
+                configMapKeyRef:
                   name: config
                   key: VITE_OPENAI_API_KEY
             - name: VITE_GOOGLE_MAP_API_KEY
                valueFrom:
-                configMapRef:
+                configMapKeyRef:
                   name: config
                   key: VITE_GOOGLE_MAP_API_KEY      
 ---
