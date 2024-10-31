@@ -14,8 +14,9 @@ spec:
     spec:
       containers:
         - name: frontend
-          # 여러분의 frontend image 주소를 입력해주세요.
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_7c3e5d928f35
+          ports:
+            - containerPort: 3000  # 컨테이너에서 3000 포트 열기
           env:
             - name: VITE_TMAP_APP_KEY
               valueFrom:
@@ -40,6 +41,8 @@ metadata:
 spec:
   selector:
     app: frontend
+  type: NodePort  # 외부 접근을 허용하기 위해 NodePort로 설정
   ports:
     - port: 3000
       targetPort: 3000
+      nodePort: 32000  # 원하는 포트 번호 지정 (32000~32767 범위 내에서 선택)
