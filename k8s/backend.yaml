@@ -24,7 +24,7 @@ spec:
             - name: sid
               valueFrom:
                 configMapKeyRef:
-                  name: config 
+                  name: config
                   key: sid
             - name: token
               valueFrom:
