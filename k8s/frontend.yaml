@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_7c3e5d928f35
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_90faf74859f0
           ports:
             - containerPort: 3000  # 컨테이너에서 3000 포트 열기
           env:
