@@ -18,17 +18,17 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_fb724d017c05
           env:
             - name: VITE_TMAP_APP_KEY
-               valueFrom:
+              valueFrom:
                 configMapKeyRef:
                   name: config 
                   key: VITE_TMAP_APP_KEY
             - name: VITE_OPENAI_API_KEY
-               valueFrom:
+              valueFrom:
                 configMapKeyRef:
                   name: config
                   key: VITE_OPENAI_API_KEY
             - name: VITE_GOOGLE_MAP_API_KEY
-               valueFrom:
+              valueFrom:
                 configMapKeyRef:
                   name: config
                   key: VITE_GOOGLE_MAP_API_KEY      
